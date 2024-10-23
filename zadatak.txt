@@ -1,1 +1,6 @@
+<<<<<<< HEAD
+izmjena
+Druga izmjena
+=======
 
+>>>>>>> 41863e632584de6bfb1a70eb8668b90b6be1c755
