@@ -3,4 +3,6 @@ izmjena
 Druga izmjena
 =======
 
+treca izmjena
+dadadadadad
 >>>>>>> 41863e632584de6bfb1a70eb8668b90b6be1c755
