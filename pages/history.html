@@ -22,7 +22,7 @@
   </script>
 
 
-
+  
   <div class="center">
   </div>
 
@@ -30,10 +30,10 @@
     <fieldset id="lit_q1">
       <h1>Pitanje 1: Tko je bio prvi predsjednik Sjedinjenih Američkih Država?</h1>
       <div>
-        <input type="radio" id="lit_q1_choice1" name="lit_q1" value="N" />
+        <input type="radio" id="lit_q1_choice1" name="lit_q1" value="T" />
         <label for="lit_q1_choice1">Thomas Jefferson</label>
 
-        <input type="radio" id="lit_q1_choice2" name="lit_q1" value="T" />
+        <input type="radio" id="lit_q1_choice2" name="lit_q1" value="N" />
         <label for="lit_q1_choice1">George Washington</label>
 
         <input type="radio" id="lit_q1_choice3" name="lit_q1" value="N" />
@@ -74,25 +74,25 @@
     </fieldset>
     <fieldset id="lit_q4">
       <h1>Pitanje 4: Koji poznati lider je bio vođa Sovjetskog Saveza tijekom Hladnog rata?</h1>
-      <input type="radio" id="lit_q4_choice1" name="lit_q4" value="T" />
-      <label for="lit_q4_choice1">Joseph Stalin</label>
+        <input type="radio" id="lit_q4_choice1" name="lit_q4" value="T" />
+        <label for="lit_q4_choice1">Joseph Stalin</label>
 
-      <input type="radio" id="lit_q4_choice2" name="lit_q4" value="N" />
-      <label for="lit_q4_choice1">Vladimir Lenin</label>
+        <input type="radio" id="lit_q4_choice2" name="lit_q4" value="N" />
+        <label for="lit_q4_choice1">Vladimir Lenin</label>
 
-      <input type="radio" id="lit_q4_choice3" name="lit_q4" value="N" />
-      <label for="lit_q4_choice1">Nikita Khrushchev</label>
+        <input type="radio" id="lit_q4_choice3" name="lit_q4" value="N" />
+        <label for="lit_q4_choice1">Nikita Khrushchev</label>
 
-      <input type="radio" id="lit_q4_choice4" name="lit_q4" value="N" />
-      <label for="lit_q4_choice1">Leon Trotsky</label>
+        <input type="radio" id="lit_q4_choice4" name="lit_q4" value="N" />
+        <label for="lit_q4_choice1">Leon Trotsky</label>
     </fieldset>
     <fieldset id="lit_q5">
       <h2>Pitanje 5: Koji događaj označava početak Američkog Građanskog rata?</h2>
       <div>
-        <input type="radio" id="lit_q5_choice1" name="lit_q5" value="N" />
+        <input type="radio" id="lit_q5_choice1" name="lit_q5" value="T" />
         <label1 for="lit_q5_choice1"> Bitka kod Gettysburga</label1>
 
-        <input type="radio" id="lit_q5_choice2" name="lit_q5" value="T" />
+        <input type="radio" id="lit_q5_choice2" name="lit_q5" value="N" />
         <label1 for="lit_q5_choice1">Pohod na Fort Sumter</label1>
 
         <input type="radio" id="lit_q5_choice3" name="lit_q5" value="N" />
@@ -147,13 +147,12 @@
         <label1 for="lit_q8_choice1">John F. Kennedy</label1>
     </fieldset>
     <fieldset id="lit_q9">
-      <h2>Pitanje 9: Koja je osoba odigrala ključnu ulogu u vođenju mirnog otpora protiv apartheida u Južnoj Africi?
-      </h2>
+      <h2>Pitanje 9: Koja je osoba odigrala ključnu ulogu u vođenju mirnog otpora protiv apartheida u Južnoj Africi?</h2>
       <div>
-        <input type="radio" id="lit_q9_choice1" name="lit_q9" value="T" />
+        <input type="radio" id="lit_q9_choice1" name="lit_q9" value="N" />
         <label1 for="lit_q9_choice1">Nelson Mandela</label1>
 
-        <input type="radio" id="lit_q9_choice2" name="lit_q9" value="N" />
+        <input type="radio" id="lit_q9_choice2" name="lit_q9" value="T" />
         <label1 for="lit_q9_choice1">Desmond Tutu</label1>
 
         <input type="radio" id="lit_q9_choice3" name="lit_q9" value="N" />
@@ -178,76 +177,75 @@
         <label1 for="lit_q10_choice1">Pad Berlinskog zida</label1>
     </fieldset>
 
+
     <p><button type="submit">SUBMIT</button>
       <a href="play.html">BACK</a>
     </p>
+
   </form>
   <script>
     window.onscroll = function () {
       var scrollPos = window.scrollY;
       var background = document.querySelector('.animated-background');
-      background.style.backgroundPositionY = -scrollPos + 'px';
+      //background.style.backgroundPositionY = -scrollPos + 'px';
     };
 
+    
+function zbrojiBodove() {
+    let trenutni = document.getElementById
+}
 
-    function zbrojiBodove() {
-      let trenutni = document.getElementById
-    }
 
-
-    function logSubmit(event) {
-      event.preventDefault();
-      let odgovori = [
-        document.getElementById("lit_q1_choice1").checked,
-        document.getElementById("lit_q2_choice2").checked,
-        document.getElementById("lit_q3_choice3").checked,
-        document.getElementById("lit_q4_choice1").checked,
-        document.getElementById("lit_q5_choice1").checked,
-        document.getElementById("lit_q6_choice3").checked,
-        document.getElementById("lit_q7_choice1").checked,
-        document.getElementById("lit_q8_choice1").checked,
-        document.getElementById("lit_q9_choice2").checked,
-        document.getElementById("lit_q10_choice4").checked
-      ]
-      let trenutni = 0
-      odgovori.forEach(el => {
-        if (el) {
-          trenutni += 1
-        }
-      })
-      console.log(odgovori)
-      console.log("br bodova", trenutni)
-      let user = dohvatiLocalStorage('LoggedUser')
-      let igraci = dohvatiLocalStorage('Igraci')
-      let index = null
-      window.alert(trenutni);
-      for (let i = 0; i < igraci.length; i++) {
+function logSubmit(event) {
+    event.preventDefault();
+    let odgovori = [
+      document.getElementById("lit_q1_choice1").checked,
+      document.getElementById("lit_q2_choice2").checked,
+      document.getElementById("lit_q3_choice3").checked,
+      document.getElementById("lit_q4_choice1").checked,
+      document.getElementById("lit_q5_choice1").checked,
+      document.getElementById("lit_q6_choice3").checked,
+      document.getElementById("lit_q7_choice1").checked,
+      document.getElementById("lit_q8_choice1").checked,
+      document.getElementById("lit_q9_choice2").checked,
+      document.getElementById("lit_q10_choice4").checked
+    ]
+    let trenutni = 0
+    odgovori.forEach(el => {
+      if(el) {
+        trenutni += 1
+      }
+    })
+    console.log(odgovori)
+    console.log("br bodova", trenutni)
+    let user = dohvatiLocalStorage('LoggedUser')
+    let igraci = dohvatiLocalStorage('Igraci')
+    let index = null
+    for (let i = 0; i < igraci.length; i++) {
         if (igraci[i] && igraci[i].ime == user) {
-          console.log(`Igrač ${user} autoriziran.`)
-          index = i
+            console.log(`Igrač ${user} autoriziran.`)
+            index = i
         }
-      }
-      
-      if (index != null) {
-        console.log("evo me na ", index)
-        let bodovi = parseInt(igraci[index].bodovi)
-        bodovi += trenutni
-        igraci[index].bodovi = bodovi
-        console.log(bodovi)
-        posaljiLocalStorage('Igraci', igraci);
-        
-      }
-      else {
-        window.alert("User not logged in.")
-      }
     }
+    if(index != null) {
+      console.log("evo me na ", index)
+      let bodovi = parseInt(igraci[index].bodovi)
+      bodovi += trenutni
+      igraci[index].bodovi = bodovi
+      console.log(bodovi)
+      posaljiLocalStorage('Igraci', igraci); 
+      window.alert(bodovi);
+    }
+    else {
+      window.alert("User not logged in.")
+    }
+}
 
-    const form = document.getElementById("form");
-    form.addEventListener("submit", logSubmit);
+const form = document.getElementById("form");
+form.addEventListener("submit", logSubmit);
 
   </script>
 
-<script type="text/javascript" src="script.js"></script>
 
 </body>
 

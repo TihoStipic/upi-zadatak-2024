@@ -4,7 +4,7 @@ const {
   posaljiLocalStorage,
   Igrac,
   provjeriLozinku
-} = require('E:/UPI/kviz_upi/pages/kod.js');
+} = require('./kod.js');
  // Mock funkcija za localStorage
  const localStorageMock = (() => {
     let store = {};
@@ -45,6 +45,17 @@ const {
   
       // Očekujemo da funkcija vrati ispravno parsiranu vrijednost
       expect(result).toEqual(mockData);
+    });
+  });
+
+  describe('posaljiLocalStorage function', () => {
+    test('should set item in localStorage', () => {
+      // Pozovi funkciju s određenim ključem i vrijednošću
+      posaljiLocalStorage('testKey', { value: 'testValue' });
+
+      // Očekujemo da je postavljena vrijednost u localStorage
+      expect(JSON.parse(localStorage.getItem('testKey'))).toEqual({ value: 'testValue' });
+
     });
   });
 
