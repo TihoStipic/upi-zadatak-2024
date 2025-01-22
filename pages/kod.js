@@ -23,7 +23,7 @@ class Igrac {
     provjeri() {
         let retArray = dohvatiLocalStorage("Igraci") //dohvaćanje postojećih igrača iz browsera
         //console.log(retArray);
-        if (retArray) {
+        if(retArray){
             for (let i = 0; i < retArray.length; i++) {
                 if (retArray[i] && retArray[i].ime == this.ime) { //ako nije null i ako je ime iskorišteno
                     console.log(`Igrač ${this.ime} već postoji u Igraci dictionary.`);
@@ -32,14 +32,14 @@ class Igrac {
             }
 
         }
-
+     
         return true;
     }
 
     dodaj() {
         this.bodovi = 0;
         let retArray = dohvatiLocalStorage("Igraci") //dohvaćanje postojećih igrača iz browsera
-        if (retArray) {
+        if(retArray){        
             Igraci = retArray
         }
         Igraci[Igraci.length] = this; //dodavanje novog
@@ -59,17 +59,11 @@ function provjeriLozinku(ime, lozinka) {
     }
     return false;
 }
-
-
-
-
-
-
 module.exports = {
     Igrac,
     dohvatiLocalStorage,
     posaljiLocalStorage,
     provjeriLozinku,
-};
+  };
 
-
+    
