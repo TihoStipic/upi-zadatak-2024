@@ -6,30 +6,56 @@
     <title>Scoreboard</title>
     <script src="kod.js"></script>
 </head>
-<body onload="getScores()" style="background: rgb(228, 252, 43); background: linear-gradient(90deg, rgb(228, 252, 43) 0%, rgb(255, 149, 57) 26%, rgba(0,212,255,1) 100%);">
-
-<div id="scoreboard">
-    <div id="paragraph-container" style="text-align: center;">
-        <p class="paragraph"></p>
+<style>
+    body{
+        text-align:center;
+        border: 3px solid #0362a6;
+        min-height:98vh;
+        border-radius: 3px;
+        background: url('scoreboardPozadina.jpg') no-repeat;
+        background-size:cover;
+        background-position: center;
+    }
+    h1{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size:400%;
+        font-weight: 600;
+    }
+    h3{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size:200%;
+        font-weight: 600;
+    }
+    a{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size:140%;
+        color:#c71e1e;
+    }
+    a:hover{
+        color:#22ad06;
+    }
+</style>
+<body onload="getScores()" style="background: rgb(149, 152, 8);>
+    <div id="scoreboard">
+        <div id="paragraph-container" style="text-align: center;">
+            <p class="paragraph"></p>
+        </div>
+        <h1>Scoreboard</h1>
+        <h3>Player1: 0</h3><br>
+        <a href = "play.html">Back</a>
     </div>
-
- 
-</div>
-
 </body>
-
-<div >
+<div>
     <script>
         function getScores() {
             let igraci = dohvatiLocalStorage('Igraci');
             igraci.forEach(element => {
             document.write( 
-                "<div style='background: rgb(228, 252, 43); background: linear-gradient(90deg, rgba(228, 252, 43) 0%, rgba(255, 149, 57) 26%, rgba(0,212,255,1) 100%); text-align: center; color:black'>" ,
+                "<div style='background: rgb(130, 84, 3)",
                "<h3>" , element.ime , ": " , element.bodovi, "</h3>" ,
                "</div>");
             });
         }
-        </script>
-
+    </script>
 </div>
 </html>
