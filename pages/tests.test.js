@@ -69,6 +69,17 @@ const {
       expect(player.bodovi).toBe(0);
     });
   
+    test('Provjera da li igrac postoji', () => {
+      // Postavi localStorage za testiranje
+      const mockPlayers = [{ ime: 'John' }, { ime: 'Jane' }];
+      localStorage.setItem('Igraci', JSON.stringify(mockPlayers));
+  
+      // Stvori igrača s imenom koje već postoji
+      const existingPlayer = new Igrac('John', 'test@example.com', 'password');
+  
+      // Očekujemo da provjera vrati false jer igrač već postoji
+      expect(existingPlayer.provjeri()).toBe(false);
+    });
     test('Dodaje novog igraca', () => {
       // Postavi localStorage za testiranje
       const mockPlayers = [{ ime: 'John' }, { ime: 'Jane' }];
