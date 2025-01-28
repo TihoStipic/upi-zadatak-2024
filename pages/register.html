@@ -12,25 +12,25 @@
 
 <body>
   <div class="kvadrat">
-    <form action="">
+    <form id="form" action="">
       <h1>Register</h1>
 
       <div class="input-box">
-        <input type="text" placeholder="Username" required>
+        <input type="text" id="Name" placeholder="Username" required>
         <i class='bx bxs-user'></i>
       </div>
 
       <div class="input-box">
-        <input type="password" placeholder="Password" required>
+        <input type="password" id="Password" placeholder="Password" required>
         <i class='bx bxs-lock-alt' ></i>
       </div>
 
       <div class="input-box">
-        <input type="email" placeholder="Email" required>
+        <input type="email" id="E-mail" placeholder="Email" required>
         <i class='bx bxs-envelope'></i>
       </div>
 
-      <button type="submit" class="btn">Submit</button>
+      <button type="submit" value="SUBMIT" class="btn">Submit</button>
 
       <div class="register-link">
         <p><a href="index.html"> Back </a></p>
@@ -39,6 +39,31 @@
     
     </form>
   </div>
+
+  <script>
+    function logSubmit(event) {
+      event.preventDefault();
+      const ime = document.getElementById("Name").value;
+      const email = document.getElementById("E-mail").value;
+      const lozinka = document.getElementById("Password").value;
+      const noviIgrac = new Igrac(ime, email, lozinka);
+
+      if (noviIgrac.provjeri()) {
+        noviIgrac.dodaj();
+        console.log('novi igrac: ' , noviIgrac);
+        console.log('igraci lista: ' , Igraci);
+        console.log('igraci local storage: ' , localStorage.Igraci);
+        window.location = "index.html"; 
+      } else {
+        window.alert("Registracija nije moguca.");
+        console.log("Pogrešan format objekta Igrac.");
+      }
+    }
+
+    const form = document.getElementById("form");
+    form.addEventListener("submit", logSubmit);
+
+  </script>
 
 </body>
 

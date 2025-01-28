@@ -10,20 +10,8 @@
   <link rel="stylesheet" href="history.css">
 </head>
 
-<body onload="addEvent()">
-  <script>
-    function addEvent() {
-      document.body.addEventListener("click", play);
-    }
+<body>
 
-    function play() {
-      var audio = document.getElementById("audio");
-      audio.play();
-    }
-  </script>
-
-
-  
  <div class="center">
   <h1 class="naslov">HISTORY</h1>
   <form id="form">
@@ -42,8 +30,6 @@
         <input type="radio" id="lit_q1_choice4" name="lit_q1" value="N" />
         <label for="lit_q1_choice1">John Adams</label><br><br>
     
-
-   
       <h2>II: Koje je godina završio Prvi svjetski rat?</h2>
       
         <input type="radio" id="lit_q2_choice1" name="lit_q2" value="N" />
@@ -173,9 +159,11 @@
   
 
     <div class="container">
-      <a href="play.html" class="back-label">BACK</a>
-      <a href = "scoreboard.html">SCOREBOARD</a>
       <button class="submit-button">SUBMIT</button>
+      <a href="scoreboard.html">
+      <button type="button">SCORE</button></a>
+      <a href="play.html" class="back-label">
+      <button type="button">BACK</button></a>
     </div>
 
   </div>
@@ -218,6 +206,7 @@ function logSubmit(event) {
     let user = dohvatiLocalStorage('LoggedUser')
     let igraci = dohvatiLocalStorage('Igraci')
     let index = null
+    window.alert(trenutni + "/10");
     for (let i = 0; i < igraci.length; i++) {
         if (igraci[i] && igraci[i].ime == user) {
             console.log(`Igrač ${user} autoriziran.`)
@@ -231,7 +220,7 @@ function logSubmit(event) {
       igraci[index].bodovi = bodovi
       console.log(bodovi)
       posaljiLocalStorage('Igraci', igraci); 
-      window.alert(bodovi);
+      window.alert(trenutni + "/10");
     }
     else {
       window.alert("User not logged in.")

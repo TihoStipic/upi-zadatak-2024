@@ -5,50 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoreboard</title>
     <script src="kod.js"></script>
+    <link rel="stylesheet" href="scoreboard.css">
 </head>
-<style>
-    body{
-        text-align:center;
-        border: 3px solid #0362a6;
-        min-height:98vh;
-        border-radius: 3px;
-        background-color: mediumseagreen;
-    }
-    h1{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:400%;
-        font-weight: 600;
-    }
-    h3{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:200%;
-        font-weight: 600;
-    }
-    a{
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size:140%;
-        color:#c71e1e;
-    }
-    a:hover{
-        color:#22ad06;
-    }
-</style>
-<body>
-    <h1>Scoreboard</h1>
-    <h3>Player1: 0</h3><br>
-    <a href = "play.html">Back</a>
+
+<body onload="getScores()">
+    <div id="scoreboard">
+        <div id="paragraph-container" style="text-align: center;">
+            <p class="paragraph"></p>
+        </div>
+        <h1>Scoreboard</h1>
+        <h3>Player1: 0</h3><br>
+        <script>
+            function getScores() {
+                let igraci = dohvatiLocalStorage('Igraci');
+                igraci.forEach(element => {
+                document.write(
+                    "<link rel=stylesheet href=scoreboard.css>",
+                    "<div style='font-size : 30px; font-weight : bold; text-align: center'>",
+                    element.ime, ":" , element.bodovi,
+                    "</div>",
+                )
+                });
+            }
+
+        </script>
+    </div>
 </body>
 <div>
-    <script>
-        function getScores() {
-            let igraci = dohvatiLocalStorage('Igraci');
-            igraci.forEach(element => {
-            document.write( 
-                "<div style='background: rgb(130, 84, 3)",
-               "<h3>" , element.ime , ": " , element.bodovi, "</h3>" ,
-               "</div>");
-            });
-        }
-    </script>
+    
 </div>
 </html>

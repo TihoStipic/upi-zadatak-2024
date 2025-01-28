@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1737531031396" clover="3.2.0">
-  <project timestamp="1737531031396" name="All files">
-    <metrics statements="32" coveredstatements="19" conditionals="13" coveredconditionals="1" methods="6" coveredmethods="4" elements="51" coveredelements="24" complexity="0" loc="32" ncloc="32" packages="1" files="1" classes="1"/>
-    <file name="kod.js" path="C:\Users\antek\OneDrive\Radna površina\UPI\upi-zadatak-2024\pages\kod.js">
-      <metrics statements="32" coveredstatements="19" conditionals="13" coveredconditionals="1" methods="6" coveredmethods="4"/>
-      <line num="2" count="3" type="stmt"/>
-      <line num="3" count="3" type="stmt"/>
-      <line num="4" count="3" type="stmt"/>
+<coverage generated="1738017454907" clover="3.2.0">
+  <project timestamp="1738017454907" name="All files">
+    <metrics statements="32" coveredstatements="25" conditionals="13" coveredconditionals="6" methods="6" coveredmethods="5" elements="51" coveredelements="36" complexity="0" loc="32" ncloc="32" packages="1" files="1" classes="1"/>
+    <file name="kod.js" path="C:\Users\antek\OneDrive\Radna površina\Nova mapa (7)\pages\kod.js">
+      <metrics statements="32" coveredstatements="25" conditionals="13" coveredconditionals="6" methods="6" coveredmethods="5"/>
+      <line num="2" count="5" type="stmt"/>
+      <line num="3" count="5" type="stmt"/>
+      <line num="4" count="5" type="stmt"/>
       <line num="8" count="2" type="stmt"/>
       <line num="9" count="2" type="stmt"/>
       <line num="12" count="1" type="stmt"/>
       <line num="13" count="1" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
-      <line num="20" count="1" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
       <line num="24" count="0" type="stmt"/>
       <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="27" count="0" type="stmt"/>
@@ -29,12 +29,12 @@
       <line num="45" count="1" type="stmt"/>
       <line num="46" count="1" type="stmt"/>
       <line num="47" count="1" type="stmt"/>
-      <line num="52" count="0" type="stmt"/>
-      <line num="54" count="0" type="stmt"/>
-      <line num="55" count="0" type="cond" truecount="0" falsecount="5"/>
-      <line num="56" count="0" type="stmt"/>
-      <line num="57" count="0" type="stmt"/>
-      <line num="60" count="0" type="stmt"/>
+      <line num="52" count="2" type="stmt"/>
+      <line num="54" count="2" type="stmt"/>
+      <line num="55" count="3" type="cond" truecount="5" falsecount="0"/>
+      <line num="56" count="1" type="stmt"/>
+      <line num="57" count="1" type="stmt"/>
+      <line num="60" count="1" type="stmt"/>
       <line num="62" count="1" type="stmt"/>
     </file>
   </project>

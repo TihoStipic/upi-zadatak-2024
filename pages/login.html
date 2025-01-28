@@ -12,16 +12,16 @@
 </head>
 <body>
   <div class="kvadrat">
-    <form action="">
+    <form id="form" action="">
       <h1>Login</h1>
 
       <div class="input-box">
-        <input type="text" placeholder="Username" required>
+        <input type="text" id="Name" placeholder="Username" required>
         <i class='bx bxs-user'></i>
       </div>
 
       <div class="input-box">
-        <input type="password" placeholder="Password" required>
+        <input type="password" id="Password" placeholder="Password" required>
         <i class='bx bxs-lock-alt' ></i>
       </div>
 
@@ -37,6 +37,26 @@
 
     
     </form>
+    <script>
+      function validate() {
+        var username = document.getElementById("Name").value;
+        var password = document.getElementById("Password").value;
+        if (provjeriLozinku(username, password)) {
+          if (window.confirm('Login succesfull.')) {
+            posaljiLocalStorage('LoggedUser', username);
+            window.location.replace('index.html');
+          }
+        }
+        else {
+          window.alert("Username or password incorrect.");
+        }
+      }
+
+      const form = document.getElementById("form");
+      form.addEventListener("submit", validate);
+
+    </script>
+
   </div>
 
 </body>

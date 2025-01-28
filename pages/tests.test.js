@@ -27,7 +27,7 @@ const {
  
   
   describe('dohvatiLocalStorage function', () => {
-    test('Nema kljuca', () => {
+    test('Ne postoji kljuc', () => {
       // Pozovi funkciju s nekim ne-postojećim ključem
       const result = dohvatiLocalStorage('nonExistentKey');
   
@@ -49,7 +49,7 @@ const {
   });
 
   describe('posaljiLocalStorage function', () => {
-    test('should set item in localStorage', () => {
+    test('Postavlja podatke u lokalnom spremniku', () => {
       // Pozovi funkciju s određenim ključem i vrijednošću
       posaljiLocalStorage('testKey', { value: 'testValue' });
 
@@ -61,8 +61,15 @@ const {
 
   
   describe('Igrac class', () => {
+    test('Kreira igraca sa 0 bodova', () => {
+      // Stvori novog igrača
+      const player = new Igrac('John', 'john@example.com', 'password');
   
-    test('dodaje novog igraca', () => {
+      // Očekujemo da je bodovima postavljeno na 0
+      expect(player.bodovi).toBe(0);
+    });
+  
+    test('Dodaje novog igraca', () => {
       // Postavi localStorage za testiranje
       const mockPlayers = [{ ime: 'John' }, { ime: 'Jane' }];
       localStorage.setItem('Igraci', JSON.stringify(mockPlayers));
@@ -74,6 +81,31 @@ const {
       // Očekujemo da je novi igrač dodan u localStorage
       const updatedPlayers = JSON.parse(localStorage.getItem('Igraci'));
       expect(updatedPlayers).toContainEqual(newPlayer);
+    });
+  });
+  describe('provjeriLozinku function', () => {
+    test('Autorizira korisnika sa tocnim navedenim podacima', () => {
+      // Postavi localStorage za testiranje
+      const mockPlayers = [{ ime: 'John', lozinka: 'password123' }, { ime: 'Jane', lozinka: 'password456' }];
+      localStorage.setItem('Igraci', JSON.stringify(mockPlayers));
+  
+      // Provjeri lozinku s ispravnim podacima
+      const authorized = provjeriLozinku('John', 'password123');
+  
+      // Očekujemo da je autorizacija uspješna
+      expect(authorized).toBe(true);
+    });
+  
+    test('Ne autorizira kosnika sa krivim podacima', () => {
+      // Postavi localStorage za testiranje
+      const mockPlayers = [{ ime: 'John', lozinka: 'password123' }, { ime: 'Jane', lozinka: 'password456' }];
+      localStorage.setItem('Igraci', JSON.stringify(mockPlayers));
+  
+      // Provjeri lozinku s netočnim podacima
+      const authorized = provjeriLozinku('John', 'incorrectPassword');
+  
+      // Očekujemo da autorizacija nije uspješna
+      expect(authorized).toBe(false);
     });
   });
   

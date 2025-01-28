@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.88% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/34</span>
+                <span class='fraction'>26/34</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.69% </span>
+                <span class="strong">46.15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/13</span>
+                <span class='fraction'>6/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.37% </span>
+                <span class="strong">78.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/32</span>
+                <span class='fraction'>25/32</span>
             </div>
         
             
@@ -133,9 +133,9 @@
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,10 +148,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -183,15 +183,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,16 +251,16 @@ class Igrac {
     }
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >provjeriLozinku(</span>ime, lozinka) {
-    let retArray = <span class="cstat-no" title="statement not covered" >dohvatiLocalStorage("Igraci") </span>//dohvaćanje postojećih igrača iz browsera
+function provjeriLozinku(ime, lozinka) {
+    let retArray = dohvatiLocalStorage("Igraci") //dohvaćanje postojećih igrača iz browsera
     //console.log(retArray);
-<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; retArray.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        if (retArray[i] &amp;&amp; retArray[i].ime == ime &amp;&amp; retArray[i].lozinka == lozinka) { //ako nije null i ako ime i lozinka se poklapaju</span>
-<span class="cstat-no" title="statement not covered" >            console.log(`Igrač ${ime} autoriziran.`);</span>
-<span class="cstat-no" title="statement not covered" >            return true;</span>
+    for (let i = 0; i &lt; retArray.length; i++) {
+        if (retArray[i] &amp;&amp; retArray[i].ime == ime &amp;&amp; retArray[i].lozinka == lozinka) { //ako nije null i ako ime i lozinka se poklapaju
+            console.log(`Igrač ${ime} autoriziran.`);
+            return true;
         }
     }
-<span class="cstat-no" title="statement not covered" >    return false;</span>
+    return false;
 }
 module.exports = {
     Igrac,
@@ -277,7 +277,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-22T07:30:31.375Z
+                at 2025-01-27T22:37:34.891Z
             </div>
         <script src="prettify.js"></script>
         <script>
