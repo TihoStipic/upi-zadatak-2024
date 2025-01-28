@@ -2,7 +2,7 @@
 <coverage generated="1736311437907" clover="3.2.0">
   <project timestamp="1736311437907" name="All files">
     <metrics statements="32" coveredstatements="19" conditionals="13" coveredconditionals="1" methods="6" coveredmethods="4" elements="51" coveredelements="24" complexity="0" loc="32" ncloc="32" packages="1" files="1" classes="1"/>
-    <file name="kod.js" path="C:\Users\Obitelj\Desktop\UPI\Tuđa\Ante Bušić\kviz_upi\kod.js">
+    <file name="kod.js">
       <metrics statements="32" coveredstatements="19" conditionals="13" coveredconditionals="1" methods="6" coveredmethods="4"/>
       <line num="2" count="3" type="stmt"/>
       <line num="3" count="3" type="stmt"/>
